@@ -5,7 +5,7 @@ import com.example.petclinic.service.OwnerService;
 
 import java.util.List;
 
-public class OwnerController {
+public class OwnerController implements BasicController<Owner> {
 
     private OwnerService ownerService;
 
@@ -38,5 +38,4 @@ public class OwnerController {
 
         return this.ownerService.getAll();
     }
-
 }

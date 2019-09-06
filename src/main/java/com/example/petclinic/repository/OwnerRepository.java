@@ -4,14 +4,8 @@ import com.example.petclinic.model.Owner;
 
 import java.util.List;
 
-public class OwnerRepository implements CrudRepository<Owner> {
+public class OwnerRepository extends BasicRepository implements CrudRepository<Owner> {
 
-    protected FakeDatabase fakeDatabase;
-
-    public OwnerRepository() {
-
-        this.fakeDatabase = FakeDatabase.getInstance();
-    }
 
     @Override
     public Owner create(Owner owner) {

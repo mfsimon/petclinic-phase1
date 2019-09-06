@@ -1,7 +1,46 @@
 package com.example.petclinic.repository;
 
-public class VisitRepository {
+import com.example.petclinic.model.Visit;
 
-    // TODO Using the OwnerRepository as an example, complete code for this repository.
+import java.util.List;
 
-}
+    public class VisitRepository extends BasicRepository implements CrudRepository<Visit> {
+
+
+//        public VisitRepository() {
+//
+//            this.fakeDatabase = FakeDatabase.getInstance(); //singleton
+//        }
+
+        @Override
+        public Visit create(Visit visit) {
+
+            return this.fakeDatabase.save(visit);
+        }
+
+        @Override
+        public Visit read(Visit visit) {
+
+            return this.fakeDatabase.get(visit);
+        }
+
+        @Override
+        public Visit update(Visit visit) {
+
+            return this.fakeDatabase.modify(visit);
+        }
+
+        @Override
+        public boolean delete(Visit visit) {
+
+            return this.fakeDatabase.delete(visit);
+        }
+
+        @Override
+        public List<Visit> getAll() {
+
+            return this.fakeDatabase.getAll(Visit.class.getSimpleName().toLowerCase());
+        }
+    }
+    // TODO Using the VisitRepository as an example, complete code for this repository.
+

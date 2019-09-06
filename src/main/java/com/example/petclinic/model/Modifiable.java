@@ -6,5 +6,4 @@ package com.example.petclinic.model;
 public interface Modifiable {
 
     Long getId();
-
 }
